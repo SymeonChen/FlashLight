@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
     private fun setDataObserver() {
         viewModel?.flashLightState?.observe(this, Observer {
             if (it) {
-                iv_flashlight.setImageResource(R.drawable.ic_flashlight_on)
+                iv_flashlight.setImageResource(R.drawable.vec_flashlight_on)
             } else {
-                iv_flashlight.setImageResource(R.drawable.ic_flashlight_off)
+                iv_flashlight.setImageResource(R.drawable.vec_flashlight_off)
             }
 
         })
