@@ -5,6 +5,7 @@ import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.symeonchen.flashlight.FlashLightUtils.Companion.turnOffFlashLight
@@ -47,8 +48,10 @@ class MainActivity : AppCompatActivity() {
         viewModel?.flashLightState?.observe(this, Observer {
             if (it) {
                 iv_flashlight.setImageResource(R.drawable.vec_flashlight_on)
+                root_view.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
             } else {
                 iv_flashlight.setImageResource(R.drawable.vec_flashlight_off)
+                root_view.setBackgroundColor(ContextCompat.getColor(this, R.color.greyBackground))
             }
 
         })
