@@ -1,7 +1,6 @@
 package com.symeonchen.flashlight
 
 import android.hardware.camera2.CameraManager
-import android.os.Build
 
 class FlashLightUtils {
 
@@ -10,10 +9,8 @@ class FlashLightUtils {
             try {
                 cameraManager ?: return false
                 cameraId ?: return false
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    cameraManager.setTorchMode(cameraId, true)
-                    return true
-                }
+                cameraManager.setTorchMode(cameraId, true)
+                return true
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -24,10 +21,8 @@ class FlashLightUtils {
             try {
                 cameraManager ?: return false
                 cameraId ?: return false
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    cameraManager.setTorchMode(cameraId, false)
-                    return true
-                }
+                cameraManager.setTorchMode(cameraId, false)
+                return true
             } catch (e: Exception) {
                 e.printStackTrace()
             }

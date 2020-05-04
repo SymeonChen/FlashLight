@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.symeonchen.flashlight"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode project.AppVersionCode as int
         versionName project.AppVersionName
