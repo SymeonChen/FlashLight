@@ -8,6 +8,16 @@
     android:background="@color/greyBackground"
     tools:context=".MainActivity">
 
+    <CheckBox
+        android:id="@+id/cb_auto_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AutoClose"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/iv_flashlight"
         android:layout_width="wrap_content"
@@ -19,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_auto_close"
         app:layout_constraintVertical_bias="0.625" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,7 +53,9 @@ class MainActivity : AppCompatActivity() {
                 iv_flashlight.setImageResource(R.drawable.vec_flashlight_off)
                 root_view.setBackgroundColor(ContextCompat.getColor(this, R.color.greyBackground))
             }
-
+        })
+        viewModel?.flashLightAutoClose?.observe(this, Observer {
+            cb_auto_close.isChecked = it
         })
     }
 
@@ -66,12 +68,16 @@ class MainActivity : AppCompatActivity() {
             if (!flashLightState && turnOnFlashLight(cameraManager, cameraId))
                 viewModel?.flashLightState?.postValue(true)
         }
+
+        cb_auto_close.setOnCheckedChangeListener { _, isChecked ->
+            viewModel?.flashLightAutoClose?.postValue(isChecked)
+        }
     }
 
 
     override fun onStop() {
         super.onStop()
-        if (viewModel?.flashLightState?.value == true) {
+        if (viewModel?.flashLightAutoClose?.value == true && viewModel?.flashLightState?.value == true) {
             turnOffFlashLight(cameraManager, cameraId)
         }
     }
