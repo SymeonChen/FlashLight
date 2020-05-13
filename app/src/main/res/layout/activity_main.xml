@@ -20,9 +20,9 @@
 
     <ImageView
         android:id="@+id/iv_flashlight"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="40dp"
+        android:padding="80dp"
         android:rotation="-38"
         android:scaleType="fitCenter"
         android:src="@drawable/vec_flashlight_off"
@@ -30,6 +30,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cb_auto_close"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
